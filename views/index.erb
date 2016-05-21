@@ -1,0 +1,23 @@
+<h1>Encurtador de URLs</h1>
+
+
+<% if @short_url.persisted? %>
+  <%=  show_short_url(@short_url) %>
+<% end %>
+
+
+<form name='url_shortener' action='/' method=post>
+  <% if @short_url.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @short_url.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <input type='text' name='url'>
+  <input type='submit' value='Encurtar'>
+</form>
+
+

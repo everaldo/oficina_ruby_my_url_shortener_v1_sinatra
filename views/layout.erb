@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Encurtador de URLs</title>
+  </head>
+
+  <body>
+    <% flash.keys.each do |key| %>
+      <div class="alert alert-<%= key %>"><%= flash[key] %></div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
